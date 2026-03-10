@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Marketing | Hamar Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .service-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #2B0B63, #5A189A);
+            padding: 120px 0 80px;
+        }
+        .service-hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .service-hero-content h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .service-hero-content p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+        .service-hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .service-content-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .service-content-section.alt {
+            background: #f8f5ff;
+        }
+        .service-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .detail-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(43,11,99,0.1);
+        }
+        .detail-card h3 {
+            font-size: 24px;
+            color: #2B0B63;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .detail-card h3 span {
+            font-size: 30px;
+        }
+        .detail-card ul {
+            list-style: none;
+        }
+        .detail-card li {
+            padding: 10px 0;
+            color: #666680;
+            border-bottom: 1px solid #f0edf5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .detail-card li::before {
+            content: '✓';
+            color: #FFD60A;
+            font-weight: bold;
+        }
+        .strategy-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2B0B63, #5A189A);
+        }
+        .strategy-section h2 {
+            color: #fff;
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .strategy-section .section-line {
+            background: #FFD60A;
+            margin: 0 auto 40px;
+        }
+        .strategy-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .strategy-step {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .strategy-step .step-number {
+            width: 50px;
+            height: 50px;
+            background: #FFD60A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #2B0B63;
+            margin: 0 auto 20px;
+        }
+        .strategy-step h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .strategy-step p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+        .portfolio-examples {
+            padding: 80px 0;
+            background: #f8f5ff;
+        }
+        .portfolio-examples h2 {
+            text-align: center;
+            font-size: 42px;
+            color: #2B0B63;
+            margin-bottom: 20px;
+        }
+        .portfolio-examples .section-line {
+            background: linear-gradient(135deg, #2B0B63, #5A189A);
+            margin: 0 auto 50px;
+        }
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .example-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(43,11,99,0.1);
+        }
+        .example-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .example-card .content {
+            padding: 25px;
+        }
+        .example-card h4 {
+            color: #2B0B63;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .example-card p {
+            color: #666680;
+            font-size: 14px;
+        }
+        @media (max-width: 992px) {
+            .service-hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .service-hero-image {
+                display: none;
+            }
+            .service-details-grid {
+                grid-template-columns: 1fr;
+            }
+            .strategy-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .examples-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .service-hero-content h1 {
+                font-size: 32px;
+            }
+            .strategy-steps {
+                grid-template-columns: 1fr;
+            }
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">Hamar<span>Digital</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html#pricing">Pricing</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Social Media Marketing</h1>
+                <p>Build your brand presence across all major social platforms with targeted campaigns and engaging content that converts followers into customers.</p>
+                <a href="../index.html#contact" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="service-hero-image">
+                <img src="../assets/images/social-media.png" alt="Social Media Marketing">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-content-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 42px; color: #2B0B63; margin-bottom: 20px;">Why Choose Social Media Marketing?</h2>
+            <div style="width: 80px; height: 4px; background: linear-gradient(135deg, #2B0B63, #5A189A); margin: 0 auto 50px; border-radius: 2px;"></div>
+            
+            <div class="service-details-grid">
+                <div class="detail-card">
+                    <h3><span>🎯</span> What We Offer</h3>
+                    <ul>
+                        <li>Platform-specific content strategy</li>
+                        <li>Targeted ad campaigns</li>
+                        <li>Influencer partnership management</li>
+                        <li>Community engagement</li>
+                        <li>Content calendar creation</li>
+                        <li>Analytics & performance tracking</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h3><span>📈</span> Key Benefits</h3>
+                    <ul>
+                        <li>Increased brand awareness</li>
+                        <li>Higher engagement rates</li>
+                        <li>Quality lead generation</li>
+                        <li>Better customer relationships</li>
+                        <li>Improved ROI</li>
+                        <li>Competitive advantage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section class="strategy-section">
+        <div class="container">
+            <h2>Our Strategy Approach</h2>
+            <div class="section-line"></div>
+            
+            <div class="strategy-steps">
+                <div class="strategy-step">
+                    <div class="step-number">1</div>
+                    <h4>Research</h4>
+                    <p>Analyze your audience and competitors</p>
+                </div>
+                <div class="strategy-step">
+                    <div class="step-number">2</div>
+                    <h4>Strategy</h4>
+                    <p>Create customized content plan</p>
+                </div>
+                <div class="strategy-step">
+                    <div class="step-number">3</div>
+                    <h4>Execute</h4>
+                    <p>Launch campaigns and content</p>
+                </div>
+                <div class="strategy-step">
+                    <div class="step-number">4</div>
+                    <h4>Optimize</h4>
+                    <p>Track and improve results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Examples -->
+    <section class="portfolio-examples">
+        <div class="container">
+            <h2>Portfolio Examples</h2>
+            <div class="section-line"></div>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop" alt="Fashion Brand Campaign">
+                    <div class="content">
+                        <h4>Fashion Brand Campaign</h4>
+                        <p>Complete social media overhaul resulting in 500% growth</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop" alt="Restaurant Campaign">
+                    <div class="content">
+                        <h4>Restaurant Social Campaign</h4>
+                        <p>Local engagement campaign with viral reach</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=250&fit=crop" alt="Tech Startup Launch">
+                    <div class="content">
+                        <h4>Tech Startup Launch</h4>
+                        <p>Influencer-driven launch campaign</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Grow?</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Let's discuss your social media marketing needs</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" name="business" required placeholder="Your Business Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="I'm interested in Social Media Marketing services"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h4>Call or WhatsApp</h4>
+                                <a href="https://wa.me/919406031522">9406031522</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:Digitalhamar@gmail.com">Digitalhamar@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <h4>Social Media</h4>
+                                <a href="https://instagram.com/hamardigital">@hamardigital</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Hamar<span>Digital</span></h3>
+                    <p>Premium digital marketing agency helping businesses grow online.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="social-media.html">Social Media Marketing</a></li>
+                        <li><a href="seo.html">SEO Optimization</a></li>
+                        <li><a href="video-production.html">Video Production</a></li>
+                        <li><a href="social-management.html">Social Media Management</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hamar Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919406031522?text=Hello%20Hamar%20Digital%2C%20I%20want%20to%20grow%20my%20business." class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="../script.js"></script>
+</body>
+</html>
